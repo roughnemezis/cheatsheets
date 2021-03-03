@@ -61,7 +61,8 @@ Attribut |Valeurs|Commentaire
 Attribut |Valeurs|Commentaire
 --- |---|---
 **color** | `df.somecolumn`  `'rgba(152, 0, 0, .8)'`|
-**colorscale** | `'Viridis'` | 
+**colorscale** | `'Viridis'` | [infos sur les colorscales](https://plotly.com/python/colorscales/)
 **size** | `df.somecolumn` |
+**symbol** | `circle, circle-open, 202` | [Liste complète des symboles](https://plotly.com/python/marker-style/#custom-marker-symbols)
 
 Pour les colorscales voir: https://plotly.com/python/colorscales/
