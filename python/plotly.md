@@ -28,8 +28,30 @@ fig = px.line(x=t, y=np.cos(t), labels={'x':'t', 'y':'cos(t)'})
 
 
 
+# Besoins courants
 
+## Tracer sur un même graphique des données avec des axes y différents
+[Documentation](https://plotly.com/python/multiple-axes/)
 
+```python
+import plotly.graph_objects as go
+from plotly.subplots import make_subplots
+
+# Create figure with secondary y-axis
+fig = make_subplots(specs=[[{"secondary_y": True}]])
+
+# Add traces
+fig.add_trace(
+    go.Scatter(x=[1, 2, 3], y=[40, 50, 60], name="yaxis data"),
+    secondary_y=False,
+)
+
+fig.add_trace(
+    go.Scatter(x=[2, 3, 4], y=[4, 5, 6], name="yaxis2 data"),
+    secondary_y=True,
+)
+# etc...
+```
 
 
 # go.Scatter
