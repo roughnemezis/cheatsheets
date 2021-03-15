@@ -88,3 +88,29 @@ Attribut |Valeurs|Commentaire
 **symbol** | `circle, circle-open, 202` | [Liste complète des symboles](https://plotly.com/python/marker-style/#custom-marker-symbols)
 
 Pour les colorscales voir: https://plotly.com/python/colorscales/
+
+
+# Configuration de la barre d'outils
+
+ ```python
+ import plotly.graph_objects as go
+fig = go.Figure()
+config = dict({'scrollZoom': True})
+fig.add_trace(
+    go.Scatter(
+        x=[1, 2, 3],
+        y=[1, 3, 1]))
+fig.show(config=config)
+```
+
+ Pas de documentation python, c'est dans le code javascript de la librairie qu'il faut creuser. Heureusement, il est assez auto-descriptif
+[Code de plot_config.js](https://github.com/plotly/plotly.js/blob/master/src/plot_api/plot_config.js)
+
+Noter les clés utiles : modeBarButtonsToRemove et modeBarButtonsToAdd
+qui prennent en argument une clé définie dans [modebar/buttons.js](https://github.com/plotly/plotly.js/blob/master/src/components/modebar/buttons.js)
+ 
+Exemple de config. potentiellement utile 
+ ```python
+config = dict(modeBarButtonsToAdd=['drawlines, 'eraseshape'])
+```
+
