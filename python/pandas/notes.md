@@ -20,3 +20,12 @@ TODO : creuser la question des dtypes en pandas
 ```python
 pd.Timedelta("3 hours 20 minutes 10 seconds")
 ```
+
+# Générer un index de dates
+
+```python
+pd.date_range(start="2018-08-01", end ="2019-08-01", freq='1D')
+```
+pour la liste des alias pour définir les fréquences voir (ce tableau)[https://pandas.pydata.org/docs/user_guide/timeseries.html?highlight=offset%20aliases#offset-aliases] dans la doc (par exemple '10min' pour 10 minutes).
+
+Autre arguments utiles : periods, name (voir la doc)
